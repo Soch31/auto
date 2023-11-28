@@ -101,7 +101,7 @@ if hasattr(st.session_state.run, 'status'):
             else:
                 st.error("FAILED: The OpenAI API is currently processing too many requests. Please try again later ......")
              
-     elif hasattr(st.session_state.run, 'status') and st.session_state.run.status == "completed":
+    elif hasattr(st.session_state.run, 'status') and st.session_state.run.status == "completed":
          st.session_state.messages = client.beta.threads.messages.list(
              thread_id=st.session_state.thread.id
          )
