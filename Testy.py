@@ -40,6 +40,11 @@ st.sidebar.markdown("Si vous voulez me demander quelque chose, soyez polis et su
 st.sidebar.divider()
 st.sidebar.selectbox("How would you like to be contacted?",("Email", "Home phone", "Mobile phone"))
 
+df = pd.DataFrame({
+  'first column': [1, 2, 3, 4],
+  'second column': [10, 20, 30, 40]
+})
+
 # Initialize OpenAI assistant
 if "assistant" not in st.session_state:
     openai.api_key = st.secrets["OPENAI_API_KEY"]
