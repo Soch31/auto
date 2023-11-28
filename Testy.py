@@ -45,6 +45,8 @@ df = pd.DataFrame({
   'second column': [10, 20, 30, 40]
 })
 
+st.write(df)
+
 # Initialize OpenAI assistant
 if "assistant" not in st.session_state:
     openai.api_key = st.secrets["OPENAI_API_KEY"]
