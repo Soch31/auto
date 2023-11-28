@@ -68,12 +68,13 @@ for index, annotation in enumerate(annotations):
 # Add footnotes to the end of the message before displaying to user
 message_content.value += '\n' + '\n'.join(citations)
 
-    for message in reversed(st.session_state.messages.data):
-        if message.role in ["user", "assistant"]:
-            with st.chat_message(message.role):
-                for content_part in message.content:
-                    message_text = content_part.text.value
-                    st.markdown(message_text)
+# display to user
+for message in reversed(st.session_state.messages.data):
+   if message.role in ["user", "assistant"]:
+      with st.chat_message(message.role):
+          for content_part in message.content:
+              message_text = content_part.text.value
+              st.markdown(message_text)
 
 # Chat input and message creation with file ID
 if prompt := st.chat_input("Comment puis-je vous aider ?"):
