@@ -66,8 +66,8 @@ if uploaded_file is not None:
 
 # Initialize OpenAI assistant
 if "assistant" not in st.session_state:
-    openai.api_key = st.secrets["Bearer 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"]
-    st.session_state.assistant = openai.beta.assistants.retrieve(st.secrets["asst_aPtDiweLeWDH8hNd3jAOrb4I"])
+    openai.api_key = st.secrets[Bearer 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]
+    st.session_state.assistant = openai.beta.assistants.retrieve(st.secrets[asst_aPtDiweLeWDH8hNd3jAOrb4I])
     st.session_state.thread = client.beta.threads.create(
         metadata={'session_id': st.session_state.session_id}
     )
