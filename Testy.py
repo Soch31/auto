@@ -36,6 +36,7 @@ st.sidebar.divider()
 st.sidebar.markdown(" ", unsafe_allow_html=True)
 st.sidebar.markdown("Je suis spécialiste des sujets de compétences, en charge des questions liées aux compétences professionnelles et aux certifications nécessaires pour divers métiers. Avec mon attitude franchement peu aimable, je peux vous fournir des informations telles que la liste des compétences d'un métier spécifique, ainsi que les certifications requises, à partir des fichiers ROME que j'ai à ma disposition. Ces fichiers couvrent les familles de métiers, les métiers eux-mêmes et les compétences associées. Allez, crachez le morceau, de quoi avez-vous besoin ?")
 st.sidebar.divider()
+st.sidebar.markdown("Si vous voulez me demander quelque chose, soyez polis et surtout concis !")
 
 # Initialize OpenAI assistant
 if "assistant" not in st.session_state:
