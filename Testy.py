@@ -89,7 +89,7 @@ elif hasattr(st.session_state.run, 'status') and st.session_state.run.status == 
                     st.markdown(message_text)
 
 # Chat input and message creation with file ID
-if prompt := st.chat_input("How can I help you?"):
+if prompt := st.chat_input("Comment puis-je vous aider ?"):
     with st.chat_message('user'):
         st.write(prompt)
 
