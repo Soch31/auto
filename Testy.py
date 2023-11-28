@@ -33,8 +33,8 @@ if "retry_error" not in st.session_state:
 st.set_page_config(page_title="Enter title here")
 st.sidebar.title("Genius ROME")
 st.sidebar.divider()
-st.sidebar.markdown("Your name", unsafe_allow_html=True)
-st.sidebar.markdown("Assistant GPT")
+st.sidebar.markdown(" ", unsafe_allow_html=True)
+st.sidebar.markdown("Je suis spécialiste des sujets de compétences, en charge des questions liées aux compétences professionnelles et aux certifications nécessaires pour divers métiers. Avec mon attitude franchement peu aimable, je peux vous fournir des informations telles que la liste des compétences d'un métier spécifique, ainsi que les certifications requises, à partir des fichiers ROME que j'ai à ma disposition. Ces fichiers couvrent les familles de métiers, les métiers eux-mêmes et les compétences associées. Allez, crachez le morceau, de quoi avez-vous besoin ?")
 st.sidebar.divider()
 
 # Initialize OpenAI assistant
