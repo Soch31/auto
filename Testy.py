@@ -100,6 +100,17 @@ if hasattr(st.session_state.run, 'status'):
                 st.rerun()
             else:
                 st.error("FAILED: The OpenAI API is currently processing too many requests. Please try again later ......")
+             
+     elif hasattr(st.session_state.run, 'status') and st.session_state.run.status == "completed":
+         st.session_state.messages = client.beta.threads.messages.list(
+             thread_id=st.session_state.thread.id
+         )
+         for message in reversed(st.session_state.messages.data):
+             if message.role in ["user", "assistant"]:
+                 with st.chat_message(message.role):
+                     for content_part in message.content:
+                         message_text = content_part.text.value
+                         st.markdown(message_text)
 
     elif st.session_state.run.status != "completed":
            st.session_state.run = client.beta.threads.runs.retrieve(
