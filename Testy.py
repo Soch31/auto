@@ -8,7 +8,7 @@ import io
 import os
 from openai import OpenAI
 
-os.environ["OPENAI_API_KEY"] = "Bearer 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"
+os.environ["OPENAI_API_KEY"] = "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"
 os.environ["OPENAI_ASSISTANT"] = "asst_aPtDiweLeWDH8hNd3jAOrb4I"
 
 # Initialize OpenAI client
