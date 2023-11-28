@@ -9,6 +9,7 @@ import os
 from openai import OpenAI
 
 os.environ["OPENAI_API_KEY"] = "Bearer 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"
+os.environ["OPENAI_ASSISTANT"] = "asst_aPtDiweLeWDH8hNd3jAOrb4I"
 
 # Initialize OpenAI client
 client = OpenAI()
@@ -70,7 +71,7 @@ if uploaded_file is not None:
 # Initialize OpenAI assistant
 if "assistant" not in st.session_state:
     openai.api_key = os.environ["OPENAI_API_KEY"]
-    st.session_state.assistant = openai.beta.assistants.retrieve(st.secrets[asst_aPtDiweLeWDH8hNd3jAOrb4I])
+    st.session_state.assistant = openai.beta.assistants.retrieve(os.environ["OPENAI_ASSISTANT"])
     st.session_state.thread = client.beta.threads.create(
         metadata={'session_id': st.session_state.session_id}
     )
