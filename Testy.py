@@ -51,6 +51,11 @@ elif hasattr(st.session_state.run, 'status') and st.session_state.run.status == 
         thread_id=st.session_state.thread.id
     )
 
+# Extract the message content
+message_content = message.content[0].text
+annotations = message_content.annotations
+citations = []
+
 # Iterate over the annotations and add footnotes
 for index, annotation in enumerate(annotations):
     # Replace the text with a footnote
