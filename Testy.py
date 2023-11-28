@@ -50,6 +50,24 @@ elif hasattr(st.session_state.run, 'status') and st.session_state.run.status == 
     st.session_state.messages = client.beta.threads.messages.list(
         thread_id=st.session_state.thread.id
     )
+
+# Iterate over the annotations and add footnotes
+for index, annotation in enumerate(annotations):
+    # Replace the text with a footnote
+    message_content.value = message_content.value.replace(annotation.text, f' [{index}]')
+
+    # Gather citations based on annotation attributes
+    if (file_citation := getattr(annotation, 'file_citation', None)):
+        cited_file = client.files.retrieve(file_citation.file_id)
+        citations.append(f'[{index}] {file_citation.quote} from {cited_file.filename}')
+    elif (file_path := getattr(annotation, 'file_path', None)):
+        cited_file = client.files.retrieve(file_path.file_id)
+        citations.append(f'[{index}] Click <here> to download {cited_file.filename}')
+        # Note: File download functionality not implemented above for brevity
+
+# Add footnotes to the end of the message before displaying to user
+message_content.value += '\n' + '\n'.join(citations)
+
     for message in reversed(st.session_state.messages.data):
         if message.role in ["user", "assistant"]:
             with st.chat_message(message.role):
@@ -82,41 +100,7 @@ if prompt := st.chat_input("Comment puis-je vous aider ?"):
         time.sleep(1)
         st.rerun()
 
-# Handle run status
-if hasattr(st.session_state.run, 'status'):
-    if st.session_state.run.status == "in_progress":
-        with st.chat_message('assistant'):
-            st.write("Thinking ......")
-        if st.session_state.retry_error < 3:
-            time.sleep(1)
-            st.rerun()
-
-    elif st.session_state.run.status == "failed":
-        st.session_state.retry_error += 1
-        with st.chat_message('assistant'):
-            if st.session_state.retry_error < 3:
-                st.write("Run failed, retrying ......")
-                time.sleep(3)
-                st.rerun()
-            else:
-                st.error("FAILED: The OpenAI API is currently processing too many requests. Please try again later ......")
-             
-    elif hasattr(st.session_state.run, 'status') and st.session_state.run.status == "completed":
-         st.session_state.messages = client.beta.threads.messages.list(
-             thread_id=st.session_state.thread.id
-         )
-         for message in reversed(st.session_state.messages.data):
-             if message.role in ["user", "assistant"]:
-                 with st.chat_message(message.role):
-                     for content_part in message.content:
-                         message_text = content_part.text.value
-                         st.markdown(message_text)
-
-    elif st.session_state.run.status != "completed":
-           st.session_state.run = client.beta.threads.runs.retrieve(
-            thread_id=st.session_state.thread.id,
-            run_id=st.session_state.run.id,
-        )
-           if st.session_state.retry_error < 3:
-            time.sleep(3)
-            st.rerun()
+# Extract the message content
+message_content = message.content[0].text
+annotations = message_content.annotations
+citations = []
