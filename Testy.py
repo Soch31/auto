@@ -1,4 +1,4 @@
- # Importing required packages
+# Importing required packages
 import streamlit as st
 import openai
 import uuid
@@ -45,7 +45,7 @@ df = pd.DataFrame({
   'second column': [10, 20, 30, 40]
 })
 
-st.write(df)
+st.sidebar.write(df)
 
 # Initialize OpenAI assistant
 if "assistant" not in st.session_state:
