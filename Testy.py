@@ -29,7 +29,7 @@ if "retry_error" not in st.session_state:
     st.session_state.retry_error = 0
 
 if "selected_assistant" not in st.session_state:
-    st_session_state.selected_assistant = "name"
+    st.session_state.selected_assistant = "name"
 
 # Set up the page
 st.set_page_config(page_title="Enter title here")
