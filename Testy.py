@@ -40,6 +40,7 @@ st.sidebar.markdown("Je suis spécialiste des sujets de compétences, en charge 
 st.sidebar.divider()
 st.sidebar.markdown("Si vous voulez me demander quelque chose, soyez polis et surtout concis !")
 st.sidebar.divider()
+st.write("Assistant sélectionné",user_select)
 
 
 # Select Assistant
