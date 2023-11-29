@@ -38,14 +38,14 @@ st.sidebar.markdown("Je suis spécialiste des sujets de compétences, en charge 
 st.sidebar.divider()
 st.sidebar.markdown("Si vous voulez me demander quelque chose, soyez polis et surtout concis !")
 st.sidebar.divider()
-st.sidebar.selectbox("How would you like to be contacted?",("Email", "Home phone", "Mobile phone"))
 
-df = pd.DataFrame({
-  'first column': [1, 2, 3, 4],
-  'second column': [10, 20, 30, 40]
-})
+User_Select=st.selectbox("Sélectionner votre assistant",("ROME V1", "ROME V2"))
 
-st.sidebar.write(df)
+if(User_Select=="ROME V1"
+    os.environ["OPENAI_ASSISTANT"] = "asst_aPtDiweLeWDH8hNd3jAOrb4I"
+    elif User_Select=="ROME V2"
+        os.environ["OPENAI_ASSISTANT"] = "asst_4bWW6Rb0sM1CTYMqHQs2NpcD"
+)
 
 # Initialize OpenAI assistant
 if "assistant" not in st.session_state:
