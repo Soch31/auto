@@ -53,7 +53,7 @@ elif user_select == "ROME V2":
 # Initialize OpenAI assistant
 if "assistant" not in st.session_state:
     openai.api_key = st.secrets["OPENAI_API_KEY"]
-    st.session_state.assistant = openai.beta.assistants.retrieve(st_session_state.selected_assistant)
+    st.session_state.assistant = openai.beta.assistants.retrieve(st.session_state.selected_assistant)
     st.session_state.thread = client.beta.threads.create(
         metadata={'session_id': st.session_state.session_id}
     )
