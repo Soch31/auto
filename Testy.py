@@ -55,9 +55,6 @@ elif user_select == "ROME V2":
     st.sidebar.markdown("Je suis spécialiste des sujets de compétences, en charge des questions liées aux compétences professionnelles et aux certifications nécessaires pour divers métiers.")
 
 st.sidebar.divider()
-st.sidebar.markdown("Si vous voulez me demander quelque chose, soyez polis et surtout concis !")
-st.sidebar.divider()
-st.sidebar.write("Assistant sélectionné",user_select,st.session_state.selected_assistant)
 
 # Initialize OpenAI assistant
 if "assistant" not in st.session_state:
