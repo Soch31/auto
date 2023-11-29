@@ -91,7 +91,7 @@ if prompt := st.chat_input("Crachez le morceau !"):
 
     st.session_state.run = client.beta.threads.runs.create(
         thread_id=st.session_state.thread.id,
-        assistant_id=st.session_state.assistant.id,
+        assistant_id=st.session_state.selected_assistant,
     )
     if st.session_state.retry_error < 3:
         time.sleep(1)
