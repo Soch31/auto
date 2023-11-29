@@ -38,7 +38,7 @@ st.sidebar.title("Talent Solutions Assistants")
 st.sidebar.divider()
 
 # Select Assistant
-user_select=st.sidebar.selectbox("Sélectionner votre assistant",("ROME V1", "ROME V2"))
+user_select=st.sidebar.selectbox("Sélectionnez votre assistant",("ROME V1", "ROME V2"))
 st.write('You selected:', user_select)
 
 if user_select == "ROME V1":
