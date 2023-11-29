@@ -39,7 +39,6 @@ st.sidebar.divider()
 
 # Select Assistant
 user_select=st.sidebar.selectbox("Sélectionnez votre assistant",("ROME V1", "ROME V2"))
-st.write('You selected:', user_select)
 
 if user_select == "ROME V1":
     st.session_state.selected_assistant = "asst_aPtDiweLeWDH8hNd3jAOrb4I"
