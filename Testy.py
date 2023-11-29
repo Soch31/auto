@@ -33,6 +33,7 @@ if "selected_assistant" not in st.session_state:
 
 # Select Assistant
 user_select=st.selectbox("Sélectionner votre assistant",("ROME V1", "ROME V2"))
+st.write('You selected:', user_select)
 
 if user_select == "ROME V1":
     st.session_state.selected_assistant = "asst_aPtDiweLeWDH8hNd3jAOrb4I"
