@@ -14,7 +14,6 @@ client = OpenAI()
 
 # Your chosen model
 MODEL = "gpt-4-1106-preview"
-user_select = "ROME V1"
 
 # Initialize session state variables
 if "session_id" not in st.session_state:
@@ -32,6 +31,14 @@ if "retry_error" not in st.session_state:
 if "selected_assistant" not in st.session_state:
     st.session_state.selected_assistant = "name"
 
+# Select Assistant
+user_select=st.selectbox("Sélectionner votre assistant",("ROME V1", "ROME V2"))
+
+if user_select == "ROME V1":
+    st.session_state.selected_assistant = "asst_aPtDiweLeWDH8hNd3jAOrb4I"
+elif user_select == "ROME V2":
+    st.session_state.selected_assistant = "asst_4bWW6Rb0sM1CTYMqHQs2NpcD"
+
 # Set up the page
 st.set_page_config(page_title="Enter title here")
 st.sidebar.title("Genius ROME")
@@ -42,15 +49,6 @@ st.sidebar.divider()
 st.sidebar.markdown("Si vous voulez me demander quelque chose, soyez polis et surtout concis !")
 st.sidebar.divider()
 st.sidebar.write("Assistant sélectionné",user_select)
-
-
-# Select Assistant
-user_select=st.selectbox("Sélectionner votre assistant",("ROME V1", "ROME V2"))
-
-if user_select == "ROME V1":
-    st.session_state.selected_assistant = "asst_aPtDiweLeWDH8hNd3jAOrb4I"
-elif user_select == "ROME V2":
-    st.session_state.selected_assistant = "asst_4bWW6Rb0sM1CTYMqHQs2NpcD"
 
 # Initialize OpenAI assistant
 if "assistant" not in st.session_state:
