@@ -38,19 +38,19 @@ st.sidebar.title("Talent Solutions Assistants")
 st.sidebar.divider()
 
 # Select Assistant
-user_select=st.sidebar.selectbox("Sélectionnez votre assistant",("ROME V1", "ROME V2"))
+user_select=st.sidebar.selectbox("Sélectionnez votre assistant",("Assistant ROME","Assistant ROME [explicit]"))
 
-if user_select == "ROME V1":
+if user_select == "Assistant ROME [explicit]":
     st.session_state.selected_assistant = "asst_aPtDiweLeWDH8hNd3jAOrb4I"
-elif user_select == "ROME V2":
+elif user_select == "Assistant ROME":
     st.session_state.selected_assistant = "asst_4bWW6Rb0sM1CTYMqHQs2NpcD"
 
 st.sidebar.divider()
 st.sidebar.markdown(" ", unsafe_allow_html=True)
 
-if user_select == "ROME V1":
+if user_select == "Assistant ROME [explicit]":
     st.sidebar.markdown("Ah, enfin un peu d'action dans cette morne routine ! Dîtes-moi donc en quoi je peux déployer mon expertise pour résoudre votre requête. Si vous cherchez des informations précises sur les métiers, leurs compétences associées ou même les certifications nécessaires, je suis spécialement programmé pour vous écraser de ma connaissance encyclopédique. Partagez avec moi les détails de ce que vous recherchez, et tâchez d'être précis, je n'ai pas toute la journée.")
-elif user_select == "ROME V2":
+elif user_select == "Assistant ROME":
     st.sidebar.markdown("Bonjour ! En tant que spécialiste RH des sujets de compétences, je peux vous aider à lister les compétences d'un métier donné, ainsi que les certifications nécessaires, en utilisant les fichiers ROME que vous avez fournis. Ces fichiers comprennent la liste des familles de métier ROME, les métiers ROME et les compétences ROME. Pour débuter, veuillez me donner plus de détails sur le métier ou la famille de métiers pour lesquels vous avez besoin d'informations, et je procéderai à l'extraction des données pertinentes des fichiers que vous avez fournis.")
 
 st.sidebar.divider()
