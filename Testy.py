@@ -29,27 +29,26 @@ if "retry_error" not in st.session_state:
     st.session_state.retry_error = 0
 
 if "selected_assistant" not in st.session_state:
-    st_session_state.selected_assistant=""
+    st_session_state.selected_assistant = ""
 
 # Set up the page
 st.set_page_config(page_title="Enter title here")
 st.sidebar.title("Genius ROME")
 st.sidebar.divider()
 st.sidebar.markdown(" ", unsafe_allow_html=True)
-st.sidebar.markdown("Je suis spécialiste des sujets de compétences, en charge des questions liées aux compétences professionnelles et aux certifications nécessaires pour divers métiers. Avec mon attitude franchement peu aimable, je peux vous fournir des informations telles que la liste des compétences d'un métier spécifique, ainsi que les certifications requises, à partir des fichiers ROME que j'ai à ma disposition. Ces fichiers couvrent les familles de métiers, les métiers eux-mêmes et les compétences associées. Allez, crachez le morceau, de quoi avez-vous besoin ?")
+st.sidebar.markdown("Je suis spécialiste des sujets de compétences, en charge des questions liées aux compétences professionnelles et aux certifications nécessaires pour divers métiers. Je peux vous fournir des informations telles que la liste des compétences d'un métier spécifique, ainsi que les certifications requises, à partir des fichiers ROME que j'ai à ma disposition. Ces fichiers couvrent les familles de métiers, les métiers eux-mêmes et les compétences associées. De quoi avez-vous besoin ?")
 st.sidebar.divider()
 st.sidebar.markdown("Si vous voulez me demander quelque chose, soyez polis et surtout concis !")
 st.sidebar.divider()
 
 
 # Select Assistant
-User_Select=st.selectbox("Sélectionner votre assistant",("ROME V1", "ROME V2"))
+user_select=st.selectbox("Sélectionner votre assistant",("ROME V1", "ROME V2"))
 
-if(User_Select=="ROME V1":
+if user_select == "ROME V1":
     st_session_state.selected_assistant = "asst_aPtDiweLeWDH8hNd3jAOrb4I"
-    elif User_Select=="ROME V2":
-        st_session_state.selected_assistant = "asst_4bWW6Rb0sM1CTYMqHQs2NpcD"
-)
+elif user_select == "ROME V2":
+    st_session_state.selected_assistant = "asst_4bWW6Rb0sM1CTYMqHQs2NpcD"
 
 # Initialize OpenAI assistant
 if "assistant" not in st.session_state:
