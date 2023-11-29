@@ -31,6 +31,8 @@ if "retry_error" not in st.session_state:
 if "selected_assistant" not in st.session_state:
     st.session_state.selected_assistant = "name"
 
+st.set_page_config(page_title="Enter title here")
+
 # Select Assistant
 user_select=st.selectbox("Sélectionner votre assistant",("ROME V1", "ROME V2"))
 st.write('You selected:', user_select)
@@ -41,7 +43,6 @@ elif user_select == "ROME V2":
     st.session_state.selected_assistant = "asst_4bWW6Rb0sM1CTYMqHQs2NpcD"
 
 # Set up the page
-st.set_page_config(page_title="Enter title here")
 st.sidebar.title("Genius ROME")
 st.sidebar.divider()
 st.sidebar.markdown(" ", unsafe_allow_html=True)
