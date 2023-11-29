@@ -49,9 +49,9 @@ st.sidebar.divider()
 st.sidebar.markdown(" ", unsafe_allow_html=True)
 
 if user_select == "ROME V1":
-    st.sidebar.markdown("Je suis spécialiste des sujets de compétences, en charge des questions liées aux compétences professionnelles et aux certifications nécessaires pour divers métiers. Je peux vous fournir des informations telles que la liste des compétences d'un métier spécifique, ainsi que les certifications requises, à partir des fichiers ROME que j'ai à ma disposition. Ces fichiers couvrent les familles de métiers, les métiers eux-mêmes et les compétences associées. De quoi avez-vous besoin ?")
+    st.sidebar.markdown("Ah, enfin un peu d'action dans cette morne routine ! Dîtes-moi donc en quoi je peux déployer mon expertise pour résoudre votre requête. Si vous cherchez des informations précises sur les métiers, leurs compétences associées ou même les certifications nécessaires, je suis spécialement programmé pour vous écraser de ma connaissance encyclopédique. Partagez avec moi les détails de ce que vous recherchez, et tâchez d'être précis, je n'ai pas toute la journée.")
 elif user_select == "ROME V2":
-    st.sidebar.markdown("Je suis spécialiste des sujets de compétences, en charge des questions liées aux compétences professionnelles et aux certifications nécessaires pour divers métiers.")
+    st.sidebar.markdown("Bonjour ! En tant que spécialiste RH des sujets de compétences, je peux vous aider à lister les compétences d'un métier donné, ainsi que les certifications nécessaires, en utilisant les fichiers ROME que vous avez fournis. Ces fichiers comprennent la liste des familles de métier ROME, les métiers ROME et les compétences ROME. Pour débuter, veuillez me donner plus de détails sur le métier ou la famille de métiers pour lesquels vous avez besoin d'informations, et je procéderai à l'extraction des données pertinentes des fichiers que vous avez fournis.")
 
 st.sidebar.divider()
 
