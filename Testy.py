@@ -33,8 +33,12 @@ if "selected_assistant" not in st.session_state:
 
 st.set_page_config(page_title="Enter title here")
 
+# Set up the page
+st.sidebar.title("Talent Solutions Assistants")
+st.sidebar.divider()
+
 # Select Assistant
-user_select=st.selectbox("Sélectionner votre assistant",("ROME V1", "ROME V2"))
+user_select=st.sidebar.selectbox("Sélectionner votre assistant",("ROME V1", "ROME V2"))
 st.write('You selected:', user_select)
 
 if user_select == "ROME V1":
@@ -42,11 +46,14 @@ if user_select == "ROME V1":
 elif user_select == "ROME V2":
     st.session_state.selected_assistant = "asst_4bWW6Rb0sM1CTYMqHQs2NpcD"
 
-# Set up the page
-st.sidebar.title("Genius ROME")
 st.sidebar.divider()
 st.sidebar.markdown(" ", unsafe_allow_html=True)
-st.sidebar.markdown("Je suis spécialiste des sujets de compétences, en charge des questions liées aux compétences professionnelles et aux certifications nécessaires pour divers métiers. Je peux vous fournir des informations telles que la liste des compétences d'un métier spécifique, ainsi que les certifications requises, à partir des fichiers ROME que j'ai à ma disposition. Ces fichiers couvrent les familles de métiers, les métiers eux-mêmes et les compétences associées. De quoi avez-vous besoin ?")
+
+if user_select == "ROME V1":
+    st.sidebar.markdown("Je suis spécialiste des sujets de compétences, en charge des questions liées aux compétences professionnelles et aux certifications nécessaires pour divers métiers. Je peux vous fournir des informations telles que la liste des compétences d'un métier spécifique, ainsi que les certifications requises, à partir des fichiers ROME que j'ai à ma disposition. Ces fichiers couvrent les familles de métiers, les métiers eux-mêmes et les compétences associées. De quoi avez-vous besoin ?")
+elif user_select == "ROME V2":
+    st.sidebar.markdown("Je suis spécialiste des sujets de compétences, en charge des questions liées aux compétences professionnelles et aux certifications nécessaires pour divers métiers.")
+
 st.sidebar.divider()
 st.sidebar.markdown("Si vous voulez me demander quelque chose, soyez polis et surtout concis !")
 st.sidebar.divider()
