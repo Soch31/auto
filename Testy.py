@@ -46,9 +46,9 @@ st.sidebar.divider()
 user_select=st.selectbox("Sélectionner votre assistant",("ROME V1", "ROME V2"))
 
 if user_select == "ROME V1":
-    st_session_state.selected_assistant = "asst_aPtDiweLeWDH8hNd3jAOrb4I"
+    st.session_state.selected_assistant = "asst_aPtDiweLeWDH8hNd3jAOrb4I"
 elif user_select == "ROME V2":
-    st_session_state.selected_assistant = "asst_4bWW6Rb0sM1CTYMqHQs2NpcD"
+    st.session_state.selected_assistant = "asst_4bWW6Rb0sM1CTYMqHQs2NpcD"
 
 # Initialize OpenAI assistant
 if "assistant" not in st.session_state:
