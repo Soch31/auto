@@ -8,7 +8,6 @@ import io
 import os
 from openai import OpenAI
 
-os.environ["OPENAI_ASSISTANT"] = "asst_aPtDiweLeWDH8hNd3jAOrb4I"
 
 # Initialize OpenAI client
 client = OpenAI()
@@ -29,6 +28,9 @@ if "messages" not in st.session_state:
 if "retry_error" not in st.session_state:
     st.session_state.retry_error = 0
 
+if "selected_assistant" not in st.session_state:
+    st_session_state.selected_assistant=""
+
 # Set up the page
 st.set_page_config(page_title="Enter title here")
 st.sidebar.title("Genius ROME")
@@ -39,18 +41,20 @@ st.sidebar.divider()
 st.sidebar.markdown("Si vous voulez me demander quelque chose, soyez polis et surtout concis !")
 st.sidebar.divider()
 
+
+# Select Assistant
 User_Select=st.selectbox("Sélectionner votre assistant",("ROME V1", "ROME V2"))
 
-if(User_Select=="ROME V1"
-    os.environ["OPENAI_ASSISTANT"] = "asst_aPtDiweLeWDH8hNd3jAOrb4I"
-    elif User_Select=="ROME V2"
-        os.environ["OPENAI_ASSISTANT"] = "asst_4bWW6Rb0sM1CTYMqHQs2NpcD"
+if(User_Select=="ROME V1":
+    st_session_state.selected_assistant = "asst_aPtDiweLeWDH8hNd3jAOrb4I"
+    elif User_Select=="ROME V2":
+        st_session_state.selected_assistant = "asst_4bWW6Rb0sM1CTYMqHQs2NpcD"
 )
 
 # Initialize OpenAI assistant
 if "assistant" not in st.session_state:
     openai.api_key = st.secrets["OPENAI_API_KEY"]
-    st.session_state.assistant = openai.beta.assistants.retrieve(os.environ["OPENAI_ASSISTANT"])
+    st.session_state.assistant = openai.beta.assistants.retrieve(st_session_state.selected_assistant)
     st.session_state.thread = client.beta.threads.create(
         metadata={'session_id': st.session_state.session_id}
     )
