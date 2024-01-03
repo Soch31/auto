@@ -19,7 +19,7 @@ def load_config(config_path='config.yaml'):
         return yaml.load(file, Loader=SafeLoader)
 
 def save_config(config, config_path='config.yaml'):
-    with open('../config.yaml', 'w') as file:
+    with open('config.yaml', 'w') as file:
         yaml.dump(config, file, Dumper=SafeDumper)
 
 def hash_secret_key(secret_key):
