@@ -37,4 +37,4 @@ credentials:
       secret_key: a4e624d686e03ed2767c0abd85c14426b0b1157d2ce81d27bb4fe4f6f01d688a
 preauthorized:
   emails:
-  - melsby@gmail.com
+  - romain.chamot@manpowergroup.fr
