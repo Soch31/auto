@@ -34,7 +34,7 @@ if "selected_assistant" not in st.session_state:
 st.set_page_config(page_title="SAM l'expert emploi")
 
 # Set up the page
-st.sidebar.image('./TS.png')
+st.sidebar.image('TS.png')
 st.sidebar.title("SAM l'expert emploi")
 st.sidebar.divider()
 
