@@ -137,8 +137,6 @@ if "retry_error" not in st.session_state:
 if "selected_assistant" not in st.session_state:
     st.session_state.selected_assistant = "name"
 
-st.set_page_config(page_title="SAM l'expert emploi")
-
 # Set up the page
 st.sidebar.image('TS.png',use_column_width=True)
 st.sidebar.title("SAM l'expert emploi")
