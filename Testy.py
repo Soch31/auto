@@ -111,8 +111,8 @@ if not authentication_status:
     
 
 elif authentication_status:
-    st.write(f'Welcome {name}')
-    if authenticator.logout('Logout', 'main', key='unique_key'):
+    st.sidebar.write(f'Welcome {name}')
+    if authenticator.logout('Logout', 'sidebar', key='unique_key'):
         st.write("You have been logged out!")
 
     # Initialize OpenAI client
