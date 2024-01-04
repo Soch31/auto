@@ -13,6 +13,7 @@ from yaml.loader import SafeLoader
 from yaml.dumper import SafeDumper
 from streamlit_authenticator import Hasher
 import hashlib
+from streamlit_autorefresh import st_autorefresh
 
 def load_config(config_path='config.yaml'):
     with open(config_path, 'r') as file:
@@ -111,10 +112,10 @@ if not authentication_status:
     
 
 elif authentication_status:
-    st.sidebar.write(f'Welcome {name}')
-    if authenticator.logout('Logout', 'sidebar', key='unique_key'):
-        st.write("You have been logged out!")
 
+    # Set page auto refresh
+    count = st_autorefresh(interval=10000, limit=none, key=none)
+    
     # Initialize OpenAI client
     client = OpenAI()
     
@@ -146,6 +147,9 @@ elif authentication_status:
     st.session_state.selected_assistant = "asst_OmqTkgUMqoPEOX4boQ7EGxbz"
     st.sidebar.markdown("Je m’appelle Sam, je suis expert.e emploi en France. Je suis une intelligence artificielle au service de l’accompagnement Activ’Projet. Je suis là pour vous donner des idées et ouvrir des pistes de réflexion")
     st.sidebar.divider()
+    st.sidebar.write(f'Welcome {name}')
+    if authenticator.logout('Logout', 'sidebar', key='unique_key'):
+        st.write("You have been logged out!")
     
     # Initialize OpenAI assistant
     if "assistant" not in st.session_state:
