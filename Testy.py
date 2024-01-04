@@ -30,8 +30,8 @@ def verify_secret_key(input_secret_key, stored_hashed_secret_key):
     return input_hashed == stored_hashed_secret_key
 
 st.set_page_config(
-    page_title="Talent Solutions",
-    page_icon="🧊",
+    page_title="SAM",
+    page_icon="🤖",
     layout='wide',
 )
 
