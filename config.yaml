@@ -8,33 +8,6 @@ credentials:
       email: admin
       name: admin
       password: $2b$12$MnsuuZyQUV7zLUvDeLNvd.xe5P4J0HHKEhwEdY9UVgZjx.KYB45xu
-    jsmith:
-      email: jsmith@gmail.com
-      name: John Smith
-      password: abc
-    rbriggs:
-      email: rbriggs@gmail.com
-      name: Rebecca Briggs
-      password: $2b$12$Cn3/T/PEmRmMz2FzH9nO5uvWJszXm4eK2BQZM3KK.UixkjJG9n7A2
-    test:
-      email: test
-      name: test
-      password: $2b$12$itvwfEIjvV1q5HU/bTWxhe94eIytQopXzGadnkifOfqOu7txc1Ga2
-    test2:
-      email: test2
-      name: test2
-      password: $2b$12$uEoVShjf7EC9rCb2Dftqbuc1e2k2dalRVotWN2Ri1vgI6wviZhujW
-      secret_key: $2b$12$/xYJ0BanEakUot8UnfBJ1eb9MLUe6A7IG.mcfmIjZ0TPcJHVfniNe
-    test3:
-      email: test3
-      name: test3
-      password: $2b$12$tK/IhZ0ap./xY.3Yx7BdF.wIUzGA3Ea18AnOo.Io6oj8K2PP8BiKC
-      secret_key: $2b$12$hBqFMRgtWme4i2qbCWoY7u8zZjDx.LS6WdMR7nPk9Dnqwdzbup96W
-    test4:
-      email: test4
-      name: test4
-      password: $2b$12$Z9r8/Fseco.yvoglpF9kR.cQpoiQqMySiYl8vCejMOi0Yf85xKMxS
-      secret_key: a4e624d686e03ed2767c0abd85c14426b0b1157d2ce81d27bb4fe4f6f01d688a
 preauthorized:
   emails:
   - romain.chamot@manpowergroup.fr
