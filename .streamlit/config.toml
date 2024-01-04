@@ -3,4 +3,6 @@ primaryColor="#CC4E00"
 backgroundColor="#FFFFFF"
 secondaryBackgroundColor="#B1DFE0"
 textColor="#003C38"
-font="arial"
+font="sans serif"
+[server]
+runOnSave = true
