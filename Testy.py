@@ -114,7 +114,7 @@ if not authentication_status:
 elif authentication_status:
 
     # Set page auto refresh
-    count = st_autorefresh(interval=10000, limit=none, key=none)
+    count = st_autorefresh(interval=10000, limit=None, key=None)
     
     # Initialize OpenAI client
     client = OpenAI()
