@@ -19,7 +19,7 @@ def load_config(config_path='../config.yaml'):
     with open(config_path, 'r') as file:
         return yaml.load(file, Loader=SafeLoader)
 
-def save_config(config, config_path='.//config.yaml'):
+def save_config(config, config_path='../config.yaml'):
     with open(config_path, 'w') as file:
         yaml.dump(config, file, Dumper=SafeDumper)
 
