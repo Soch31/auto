@@ -3,3 +3,4 @@ streamlit
 pandas
 streamlit_authenticator
 streamlit-autorefresh
+PyYAML
