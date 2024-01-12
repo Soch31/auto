@@ -47,6 +47,7 @@ st.sidebar.divider()
 st.session_state.selected_assistant = "asst_OmqTkgUMqoPEOX4boQ7EGxbz"
 st.sidebar.markdown("Je m’appelle Sam, je suis expert.e emploi en France. Je suis une intelligence artificielle au service de l’accompagnement Activ’Projet. Je suis là pour vous donner des idées et ouvrir des pistes de réflexion")
 st.sidebar.divider()
+st.write("Je peux vous donner de nombreux conseils, mais il est important d’échanger avec votre référent Activ’Projet et de vérifier ou d’approfondir les informations importantes.")
 
 # Initialize OpenAI assistant
 if "assistant" not in st.session_state:
