@@ -68,6 +68,7 @@ elif hasattr(st.session_state.run, 'status') and st.session_state.run.status == 
                     message_text = content_part.text.value
                     message_content = content_part.text
                     annotations = message_content.annotations
+                    citations = []
                     # Iterate over the annotations and add footnotes
                     for index, annotation in enumerate(annotations):
                         # Replace the text with a footnote
