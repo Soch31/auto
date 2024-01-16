@@ -62,6 +62,7 @@ elif hasattr(st.session_state.run, 'status') and st.session_state.run.status == 
         thread_id=st.session_state.thread.id
     )
     # Extract the message content
+    message=st.session_state.messages
     message_content = message.content[0].text
     annotations = message_content.annotations
     citations = []
