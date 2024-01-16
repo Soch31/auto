@@ -36,18 +36,17 @@ if "retry_error" not in st.session_state:
 if "selected_assistant" not in st.session_state:
     st.session_state.selected_assistant = "name"
 
-st.set_page_config(page_title="SAM l'expert emploi")
+st.set_page_config(page_title="Auto specialist")
 
 # Set up the page
 st.sidebar.image('TS.png',use_column_width=True)
-st.sidebar.title("SAM l'expert emploi")
+st.sidebar.title("Bob expert auto")
 st.sidebar.divider()
 
 # Select Assistant
-st.session_state.selected_assistant = "asst_OmqTkgUMqoPEOX4boQ7EGxbz"
-st.sidebar.markdown("Je m’appelle Sam, je suis expert.e emploi en France. Je suis une intelligence artificielle au service de l’accompagnement Activ’Projet. Je suis là pour vous donner des idées et ouvrir des pistes de réflexion")
+st.session_state.selected_assistant = "asst_so6ra1jPtNThyYeebycqfsLr"
+st.sidebar.markdown(" Avez-vous des questions spécifiques sur le marché de l'industrie automobile, les perspectives d'emploi ou les évolutions des compétences dans ce secteur ? Je suis là pour vous répondre !")
 st.sidebar.divider()
-st.write("*Je peux vous donner de nombreux conseils, mais il est important d’échanger avec votre référent Activ’Projet et de vérifier ou d’approfondir les informations importantes.*")
 
 # Initialize OpenAI assistant
 if "assistant" not in st.session_state:
