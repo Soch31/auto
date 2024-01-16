@@ -86,6 +86,8 @@ elif hasattr(st.session_state.run, 'status') and st.session_state.run.status == 
                     # Add footnotes to the end of the message before displaying to user
                     message_content.value += '\n' + '\n'.join(citations)
                     st.markdown(message_content.value)
+                    if message_content.annotations := []:
+                        st.markdown(message_content.annotations)
 
 # Chat input and message creation with file ID
 if prompt := st.chat_input(""):
